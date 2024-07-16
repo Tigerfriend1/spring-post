@@ -1,7 +1,10 @@
 package kr.re.kitri.springposts.service;
 
+import kr.re.kitri.springposts.model.Post;
 import kr.re.kitri.springposts.repository.PostRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class PostService {
@@ -12,10 +15,13 @@ public class PostService {
     }
 
     //전체글 보기
-    public  String viewAllPosts(){
+    public List<Post> viewAllPosts(){
         return postRepository.selectAllPost();
     }
-    // 글 상세보기
+    // 글 상세보기(id로 게시글 찾기)
+    public Post viewPostById(long postId){
+        return postRepository.selectPostById(postId);
+    }
     // 글 등록
     //글 수정
     // 글 삭제
