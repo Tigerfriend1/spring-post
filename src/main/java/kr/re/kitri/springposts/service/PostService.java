@@ -29,5 +29,8 @@ public class PostService {
     //글 수정
     // 글 삭제
     // 좋아요
+    public Post updateLikesPlusOne(long postId){
+        return postRepository.updateLikesPlusOne(postId);
+    }
 
 }

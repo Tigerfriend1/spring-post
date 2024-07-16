@@ -27,4 +27,10 @@ public class PostRepository {
         System.out.println("insert complete");
         return post;
     }
+
+    public Post updateLikesPlusOne(long postId) {
+        //postId에 해당하는 글에 likes를 1 증가시키는 쿼리
+        //postId에 해당하는 글의 정보를 조회하는 쿼리
+        return new Post(postId, "좋아요를 수정한 제목","본문내용",1); //db연동을 하지 않아서 임시.
+    }
 }
