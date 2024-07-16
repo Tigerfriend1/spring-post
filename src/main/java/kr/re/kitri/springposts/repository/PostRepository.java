@@ -21,4 +21,10 @@ public class PostRepository {
     public Post selectPostById(long postId) {
         return new Post(postId,"해당 id값 제목","해당 본문",2);
     }
+
+    public Post insertPost(Post post) {
+        //insert into post values(post.getId(), post....);
+        System.out.println("insert complete");
+        return post;
+    }
 }

@@ -23,6 +23,9 @@ public class PostService {
         return postRepository.selectPostById(postId);
     }
     // 글 등록
+    public Post registerPost(Post post){
+        return postRepository.insertPost(post);
+    }
     //글 수정
     // 글 삭제
     // 좋아요
