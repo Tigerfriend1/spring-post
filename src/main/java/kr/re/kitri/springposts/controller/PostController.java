@@ -3,11 +3,10 @@ package kr.re.kitri.springposts.controller;
 import kr.re.kitri.springposts.model.Post;
 import kr.re.kitri.springposts.service.PostService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -20,7 +19,7 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public List<Post> allPosts(){
+    public Iterable<Post> allPosts(){
         log.debug("전체보기 Log");
         return postService.viewAllPosts();
     }
@@ -33,17 +32,15 @@ public class PostController {
     }
 
     @PostMapping("/posts")
-    public String addPost(@RequestBody Post post){
+    public Post addPost(@RequestBody Post post){
         log.debug("새로운 글 추가 Log");
-        postService.registerPost(post);
-        return "글 등록 성공";
-
+        return postService.registerPost(post);
     }
 
     @PatchMapping("/posts/{postId}/likes")
     public String doLike(@PathVariable long postId){
         log.debug("좋아요 반영 Log");
-        postService.updateLikesPlusOne(postId);
+        //postService.updateLikesPlusOne(postId);
         return "좋아요 반영 성공";
     }
 }
