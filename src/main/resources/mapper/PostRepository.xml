@@ -6,4 +6,24 @@
 <!--    <select id="selectBlog" resultType="Blog">-->
 <!--        select * from Blog where id = #{id}-->
 <!--    </select>-->
+    <!--id는 함수 이름-->
+    <select id="selectAllPost"
+            resultType="kr.re.kitri.springposts.model.Post">
+        select  id,
+                title,
+                body,
+                likes
+        from    post_k
+    </select>
+    <select id="selectPostById"
+            resultType="kr.re.kitri.springposts.model.Post"
+            parameterType="long">
+        select  id,
+                title,
+                body,
+                likes
+        from    post_k
+        where   id = #{postId}
+    </select>
+
 </mapper>
