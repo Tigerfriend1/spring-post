@@ -33,4 +33,14 @@
             values(#{title},#{body},#{likes})
     </insert>
 
+    <update id="updateLikesPlusOne"
+            parameterType="long">
+        update
+            post_k
+        set
+            likes = likes+1
+        where
+            id = #{postId};
+    </update>
+
 </mapper>
