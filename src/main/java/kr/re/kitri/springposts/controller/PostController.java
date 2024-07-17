@@ -27,14 +27,16 @@ public class PostController {
     }
 
     @PostMapping("/posts")
-    public Post addPost(@RequestBody Post post){
+    public String addPost(@RequestBody Post post){
         System.out.println(post);
-        return postService.registerPost(post);
+        postService.registerPost(post);
+        return "글 등록 성공";
 
     }
 
     @PatchMapping("/posts/{postId}/likes")
-    public Post doLike(@PathVariable long postId){
-        return postService.updateLikesPlusOne(postId);
+    public String doLike(@PathVariable long postId){
+        postService.updateLikesPlusOne(postId);
+        return "좋아요 반영 성공";
     }
 }

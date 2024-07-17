@@ -12,10 +12,10 @@ public interface PostService {
     Post viewPostById(long postId);
 
     // 글 등록
-    Post registerPost(Post post);
+    void registerPost(Post post);
 
     //글 수정
     // 글 삭제
     // 좋아요
-    Post updateLikesPlusOne(long postId);
+    void updateLikesPlusOne(long postId);
 }

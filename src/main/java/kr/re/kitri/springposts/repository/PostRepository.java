@@ -14,7 +14,7 @@ public interface PostRepository {
 
     Post selectPostById(@Param("postId") long postId) ;
 
-    Post insertPost(Post post) ;
+    void insertPost(Post post) ;
 
-    Post updateLikesPlusOne(@Param("postId")long postId);
+    void updateLikesPlusOne(@Param("postId")long postId);
 }

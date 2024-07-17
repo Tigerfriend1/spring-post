@@ -26,4 +26,11 @@
         where   id = #{postId}
     </select>
 
+    <insert id="insertPost"
+            parameterType="kr.re.kitri.springposts.model.Post">
+        insert into
+            post_k (title, body, likes)
+            values(#{title},#{body},#{likes})
+    </insert>
+
 </mapper>
