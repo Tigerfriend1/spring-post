@@ -15,7 +15,7 @@ public class Post {
     private String body;
     private int likes;
 
-    public Post(String title, String body, int likes) {
+    public Post(String title, String body, int likes) { //test용
         this.title = title;
         this.body = body;
         this.likes = likes;
