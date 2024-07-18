@@ -35,7 +35,7 @@ public class PostServiceImpl implements PostService {
     // 좋아요
     @Override
     public void updateLikesPlusOne(long postId){
-        //postRepository.updateLikesPlusOne(postId);
+        postRepository.increaseLikes(postId);
     }
 
 }

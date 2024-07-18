@@ -37,7 +37,7 @@ public class PostController {
     @PatchMapping("/posts/{postId}/likes")
     public String doLike(@PathVariable long postId){
         log.debug("좋아요 반영 Log");
-        //postService.updateLikesPlusOne(postId);
+        postService.updateLikesPlusOne(postId);
         return "좋아요 반영 성공";
     }
 }
