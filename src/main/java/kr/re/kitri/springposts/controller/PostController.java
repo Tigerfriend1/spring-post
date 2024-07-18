@@ -2,6 +2,7 @@ package kr.re.kitri.springposts.controller;
 
 import kr.re.kitri.springposts.model.Post;
 import kr.re.kitri.springposts.service.PostService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,14 +10,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j
+@RequiredArgsConstructor
 @RestController
 public class PostController {
-    //private static final Logger log= LoggerFactory.getLogger(PostController.class);
     private final PostService postService;
-
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
 
     @GetMapping("/posts")
     public Iterable<Post> allPosts(){
